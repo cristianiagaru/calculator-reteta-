@@ -105,11 +105,40 @@
         }
         .checkbox-container input { width: auto; cursor: pointer; }
 
-        .table-wrapper { overflow-x: auto; margin-top: 10px; border-radius: 8px; border: 1px solid var(--border); }
-        table { width: 100%; border-collapse: collapse; font-size: 11.5px; text-align: left; }
-        th, td { padding: 10px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
-        th { background: #1e293b; color: white; font-weight: bold; }
-        tr:hover { background: #1e293b; }
+        /* --- CORECHȚIE STRICTĂ BUG VIZUAL TABEL --- */
+        .table-wrapper { 
+            overflow-x: auto; 
+            margin-top: 10px; 
+            border-radius: 8px; 
+            border: 1px solid var(--border); 
+            background-color: #ffffff; 
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            font-size: 12px; 
+            text-align: left; 
+            background-color: #ffffff;
+        }
+        th { 
+            background: #1e293b; 
+            color: #ffffff !important; 
+            font-weight: bold; 
+            padding: 10px 8px;
+            white-space: nowrap;
+        }
+        td { 
+            padding: 10px 8px; 
+            border-bottom: 1px solid #e2e8f0; 
+            color: #0f172a !important; 
+            white-space: nowrap; 
+        }
+        tr {
+            background-color: #ffffff;
+        }
+        tr:hover { 
+            background-color: #f8fafc; 
+        }
 
         .control-ingredient-box {
             display: grid;
@@ -587,7 +616,7 @@
                     tbody.innerHTML += `<tr>
                         <td><b>${ing.nume}</b></td>
                         <td><span style="font-size:15px; color:var(--success); font-weight:bold;">${cantitateFinalaKg.toFixed(2)} kg</span></td>
-                        <td><small style="color:var(--text-muted); font-weight:bold;">${tipPas}</small></td>
+                        <td><small style="font-weight:bold;">${tipPas}</small></td>
                         <td>${costPondere.toFixed(2)} lei</td>
                     </tr>`;
                 }
